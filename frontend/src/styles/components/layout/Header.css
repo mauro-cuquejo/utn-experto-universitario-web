@@ -1,13 +1,14 @@
 header {
-    background-color: #2e64a1;
-    padding: 16px 0;
+    background: black;
+background: linear-gradient(120deg,  black 35%, #0c4c94 90%, #2e64a1 100%);
 }
+
+
 
 header h1 {
     color: white;
     font-size: 40px;
-    font-weight: 100;
-    font-style: italic;
+    font-weight: 500;
     display: inline-block;
     position: relative;
     bottom: 35px;
