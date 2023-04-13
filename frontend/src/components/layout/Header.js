@@ -1,9 +1,9 @@
 import React from 'react';
-
+import '../../styles/components/layout/Header.css'
 const Header = (props) => {
     return (
         <header>
-            <div className='header'>
+            <div className='holder header'>
                 <img src='images/logo.png' width={100} alt='logo impresiones 3d' />
                 <h1>Pr1nt3r3d</h1>
             </div>

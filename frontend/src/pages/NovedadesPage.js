@@ -2,7 +2,7 @@ import React from 'react';
 
 const NovedadesPage = (props) => {
     return (
-        <section className='novedades'>
+        <section className='holder novedades'>
             <div>
                 <h2>Novedades</h2>
             </div>
