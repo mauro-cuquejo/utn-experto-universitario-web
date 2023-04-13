@@ -15,13 +15,12 @@ const Carousel = ({ props }) => {
     return (
         <Slider {...config}>
             {props.map(element => {
-                let salida = <div><img src={element.src} width={element.width} alt={element.alt} /></div>;
-                if (element.opt !== '') {
-                    salida = <div> {salida} <div>{element.opt}</div></div>
-                }
-                return salida;
+                return (<div key={"div_" + element.key} className='contenedor_carousel'>
+                    <img src={element.src} width={element.width} alt={element.alt} />
+                    {(element.opt !== '') ? <span className='testimonio cita'>{element.opt}</span> : ""}
+                </div>)
             })}
-        </Slider>
+        </Slider >
     );
 };
 
