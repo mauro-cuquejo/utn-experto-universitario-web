@@ -1,15 +1,16 @@
 import React from 'react';
 import Carousel from '../components/layout/Carousel';
+import '../styles/pages/NosotrosPage.css'
 
 const NosotrosPage = (props) => {
     const arr = [
-        { src: 'images/home/nosotros/carlitos.png', width: '500em', alt: 'logo empresa capisci', opt: 'Carlitos' },
-        { src: 'images/home/nosotros/ingrid.png', width: '500em', alt: 'logo empresa catslock', opt: 'Ingrid' },
-        { src: 'images/home/nosotros/jorgito.png', width: '500em', alt: 'logo empresa numenara', opt: 'Jorgito' },
-        { src: 'images/home/nosotros/maria.png', width: '500em', alt: 'logo empresa numenara', opt: 'Maria' }
+        { src: 'images/home/nosotros/carlitos.png', key: 'carlitos', width: '500px', alt: 'logo empresa capisci', opt: 'Carlitos' },
+        { src: 'images/home/nosotros/ingrid.png', key: 'ingrid', width: '500px', alt: 'logo empresa catslock', opt: 'Ingrid' },
+        { src: 'images/home/nosotros/jorgito.png', key: 'jorgito', width: '500px', alt: 'logo empresa numenara', opt: 'Jorgito' },
+        { src: 'images/home/nosotros/maria.png', key: 'maria', width: '500px', alt: 'logo empresa numenara', opt: 'Maria' }
     ];
     return (
-        <main className='nosotros'>
+        <main className='holder nosotros'>
             <div className='quienes_somos'>
                 <h2>¿Quiénes Somos?</h2>
                 <p>
@@ -22,8 +23,10 @@ const NosotrosPage = (props) => {
                 </p>
             </div>
             <div className='staff'>
-                <div className='personas'></div>
-                <Carousel props={arr} />
+                <h2>Nuestro Staff</h2>
+                <div className='personas'>
+                    <Carousel props={arr} />
+                </div>
             </div>
         </main>
     );
