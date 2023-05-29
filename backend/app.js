@@ -7,9 +7,14 @@ const session = require('express-session');
 
 require('dotenv').config();
 
+var fileUpload = require('express-fileupload');
+var cors = require('cors');
+
+
 let indexRouter = require('./routes/index');
 let loginRouter = require('./routes/admin/login');
 let novedadesRouter = require('./routes/admin/novedades');
+var apiRouter = require('./routes/api');
 
 
 let secured = async (req, res, next) => {
@@ -46,9 +51,17 @@ let datosSesion = {
 
 app.use(session(datosSesion));
 
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
+
+
 app.use('/', indexRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, novedadesRouter);
+app.use('/api', cors(), apiRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
