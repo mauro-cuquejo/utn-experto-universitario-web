@@ -1,7 +1,7 @@
-var mysql = require('mysql');
-var util = require('util');
+let mysql = require('mysql');
+let util = require('util');
 
-var pool = mysql.createPool({
+let pool = mysql.createPool({
     connectionLimit: 10,
     host: process.env.MYSQL_HOST,
     port: process.env.MYSQL_PORT,

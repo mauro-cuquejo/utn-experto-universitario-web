@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var usuariosModel = require('../../models/usuariosModel')
-var helpers = require('../../helpers/helpers');
+let express = require('express');
+let router = express.Router();
+let usuariosModel = require('../../models/usuariosModel')
+let helpers = require('../../helpers/helpers');
 
 
 router.get('/', async function (req, res, next) {
@@ -13,10 +13,10 @@ router.get('/', async function (req, res, next) {
 
 router.post('/', async (req, res, next) => {
     try {
-        var usuario = req.body.usuario;
-        var password = req.body.password;
+        let usuario = req.body.usuario;
+        let password = req.body.password;
 
-        var data = await usuariosModel.getUserByUsenameAndPassword(usuario, password);
+        let data = await usuariosModel.getUserByUsenameAndPassword(usuario, password);
         if (data != undefined) {
             req.session.id_usuario = data.id;
             req.session.nombre = data.usuario;
