@@ -1,18 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 const session = require('express-session');
 
 require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/admin/login');
-var novedadesRouter = require('./routes/admin/novedades');
+let indexRouter = require('./routes/index');
+let loginRouter = require('./routes/admin/login');
+let novedadesRouter = require('./routes/admin/novedades');
 
 
-var secured = async (req, res, next) => {
+let secured = async (req, res, next) => {
   try {
     console.log(req.session.id_usuario);
     if (req.session.id_usuario) {
@@ -25,7 +25,7 @@ var secured = async (req, res, next) => {
   }
 }
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,7 +38,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //configuraciones sesion.
-var datosSesion = {
+let datosSesion = {
   secret: 'aoisdjasoijd12312oij2',
   resave: false,
   saveUninitialized: true
